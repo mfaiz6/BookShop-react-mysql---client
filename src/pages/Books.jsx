@@ -34,12 +34,12 @@ const Books = () => {
             <div className="books">
                 {books.map((book) => (
                     <div className="book" key={book.id}>
-                        {book.cover && <img src={book.cover} alt="" />}
+                        {<img src={book.cover} alt="cover" />}
                         <h2>{book.title}</h2>
                         <p>{book.desc}</p>
                         <span>${book.price}</span>
                     <button className="delete" onClick={()=>handleDelete(book.id)}>Delete</button>
-                    <button className="update">Update</button>
+                    <button className="update"><Link to={`/update/${book.id}`}>Update</Link></button>
                     </div>
                 ))}
             </div>
